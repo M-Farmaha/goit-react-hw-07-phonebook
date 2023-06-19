@@ -3,14 +3,16 @@ import { MdDelete } from 'react-icons/md';
 
 export const Section = styled.div`
   text-align: center;
-  color: #000000;
-  padding: 20px;
+
+  color: rgb(140, 141, 180);
+  padding-top: 20px;
   padding-bottom: 50px;
 `;
 
 export const PhonebookTitle = styled.h1`
   font-size: 40px;
   color: rgb(87, 88, 134);
+  margin-bottom: 20px;
 `;
 
 export const Form = styled.form`
@@ -21,7 +23,7 @@ export const Form = styled.form`
 export const Label = styled.label`
   font-size: 20px;
   font-weight: 700;
-  display: block;
+  display: inline-block;
   margin-bottom: 10px;
 `;
 
@@ -35,11 +37,14 @@ export const Input = styled.input`
   border: none;
   outline: none;
   border-radius: 5px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: transparent;
+  box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px inset,
+    rgba(70, 70, 70, 0.12) 4px 2px 4px 0px inset;
   transition: all 250ms linear;
 
   &:focus {
-    box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 29px 0px;
+    box-shadow: rgba(255, 255, 255, 0.5) -8px -4px 12px 0px inset,
+      rgba(90, 90, 90, 0.3) 8px 4px 8px 0px inset;
   }
 `;
 
@@ -54,26 +59,29 @@ export const Button = styled.button`
   height: 36px;
 
   font-size: 16px;
-  color: #ffffff;
-  background-color: rgb(87, 88, 134);
+  color: rgb(140, 141, 180);
+  background-color: transparent;
+
   border-radius: 5px;
   border: none;
   padding: 8px 20px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px,
+    rgba(70, 70, 70, 0.12) 4px 2px 4px 0px;
   transition: all 250ms linear;
 
   &:hover,
   &:focus {
-    background-color: #12216b;
-    color: #ffffff;
     cursor: pointer;
+    outline: none;
 
-    box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 29px 0px;
+    color: rgb(87, 88, 134);
+    box-shadow: rgba(255, 255, 255, 0.5) -8px -4px 12px 0px,
+      rgba(90, 90, 90, 0.3) 8px 4px 8px 0px;
   }
   &:disabled {
-    background-color: #686b7d;
     cursor: default;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px,
+      rgba(70, 70, 70, 0.12) 4px 2px 4px 0px;
     transition: all 0ms linear;
   }
 `;
@@ -82,27 +90,35 @@ export const DeleteButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
-  background-color: #9295a9;
+  color: rgb(140, 141, 180);
+  background-color: transparent;
   border-radius: 5px;
-  border: none;
-  padding: 6px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 4px solid transparent;
+  padding: 4px;
+  box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px,
+    rgba(70, 70, 70, 0.12) 4px 2px 4px 0px,
+    rgba(255, 255, 255, 0.5) -4px -2px 6px 0px inset,
+    rgba(70, 70, 70, 0.12) 4px 2px 4px 0px inset;
   transition: all 200ms linear;
 
   &:hover,
   &:focus {
-    background-color: #ff0048;
-    color: #ffffff;
     cursor: pointer;
+    outline: none;
 
-    box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 29px 0px;
+    color: rgb(87, 88, 134);
+    box-shadow: rgba(255, 255, 255, 0.7) -4px -2px 6px 0px,
+      rgba(70, 70, 70, 0.3) 4px 2px 4px 0px,
+      rgba(255, 255, 255, 0.7) -4px -2px 6px 0px inset,
+      rgba(70, 70, 70, 0.3) 4px 2px 4px 0px inset;
   }
 
   &:disabled {
-    background-color: #c8cad4;
     cursor: default;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px,
+      rgba(70, 70, 70, 0.12) 4px 2px 4px 0px,
+      rgba(255, 255, 255, 0.5) -4px -2px 6px 0px inset,
+      rgba(70, 70, 70, 0.12) 4px 2px 4px 0px inset;
     transition: all 0ms linear;
   }
 `;
@@ -125,16 +141,17 @@ export const ContactFeature = styled.h3`
 `;
 
 export const ContactListWrap = styled.ul`
+  border-radius: 10px;
+  min-width: 240px;
+  width: calc(100vw - 40px);
+  max-width: 440px;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 10px;
-  width: 340px;
-  display: flex;
   flex-direction: column-reverse;
   overflow: hidden;
-
-  background-color: #ffffff;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px,
+    rgba(70, 70, 70, 0.12) 4px 2px 4px 0px;
 `;
 
 export const ContactItemWrap = styled.li`
@@ -142,9 +159,13 @@ export const ContactItemWrap = styled.li`
   align-items: center;
   gap: 10px;
   padding: 10px 10px;
+  box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px inset,
+    rgba(70, 70, 70, 0.12) 4px 2px 4px 0px inset;
 
   &:nth-child(even) {
-    background-color: #e8f8ff;
+    background-color: #e4e9ee;
+    box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px,
+      rgba(70, 70, 70, 0.12) 4px 2px 4px 0px;
   }
 `;
 

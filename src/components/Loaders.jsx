@@ -3,7 +3,7 @@ import { RotatingLines } from 'react-loader-spinner';
 export const ButtonDeleteLoader = () => {
   return (
     <RotatingLines
-      strokeColor="rgb(255, 255, 255)"
+      strokeColor="rgb(87, 88, 134)"
       strokeWidth="5"
       animationDuration="0.75"
       width="24"
@@ -15,7 +15,7 @@ export const ButtonDeleteLoader = () => {
 export const ButtonAddLoader = () => {
   return (
     <RotatingLines
-      strokeColor="rgb(255, 255, 255)"
+      strokeColor="rgb(87, 88, 134)"
       strokeWidth="5"
       animationDuration="0.75"
       width="24"
@@ -30,7 +30,7 @@ export const ContactsLoader = () => {
       strokeColor="rgb(87, 88, 134)"
       strokeWidth="5"
       animationDuration="0.75"
-      width="100"
+      width="66"
       visible={true}
     />
   );

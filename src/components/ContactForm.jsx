@@ -5,6 +5,9 @@ import { toast } from 'react-hot-toast';
 import { ButtonAddLoader } from './Loaders';
 
 export const ContactForm = () => {
+  const [isNameFocused, setIsNameFocused] = useState(false);
+  const [isNumberFocused, setIsNumberFocused] = useState(false);
+
   const [name, setName] = useState(
     JSON.parse(window.localStorage.getItem('NAME')) ?? ''
   );
@@ -37,23 +40,37 @@ export const ContactForm = () => {
 
   return (
     <Form onSubmit={handleSubmit} autoComplete="off">
-      <Label htmlFor={'name'}>Name</Label>
+      <Label
+        htmlFor={'name'}
+        style={{ color: isNameFocused && 'rgb(87, 88, 134)' }}
+      >
+        Name
+      </Label>
       <Input
         type="text"
         name="name"
         value={name}
         onChange={e => setName(e.target.value)}
+        onFocus={() => setIsNameFocused(true)}
+        onBlur={() => setIsNameFocused(false)}
         id={'name'}
         title="min 3, max 40 symbols"
         pattern="^.{3,40}$"
         required
       />
-      <Label htmlFor={'number'}>Number</Label>
+      <Label
+        htmlFor={'number'}
+        style={{ color: isNumberFocused && 'rgb(87, 88, 134)' }}
+      >
+        Number
+      </Label>
       <Input
         type="tel"
         name="number"
         value={number}
         onChange={e => setNumber(e.target.value)}
+        onFocus={() => setIsNumberFocused(true)}
+        onBlur={() => setIsNumberFocused(false)}
         id={'number'}
         title="Only figures and spaces, min 6, max 20 symbols"
         pattern="[0-9\s]{6,20}"
