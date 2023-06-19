@@ -20,14 +20,17 @@ export const ContactList = () => {
   const visibleContacts = data?.filter(contact =>
     contact.name.toLowerCase().includes(filter)
   );
+  console.log(visibleContacts);
 
   return isLoading ? (
     <ContactsLoader />
   ) : (
-    <ContactListWrap>
-      {visibleContacts.map(contact => (
-        <ContactItem key={contact.id} contact={contact} />
-      ))}
-    </ContactListWrap>
+    visibleContacts.length !== 0 && (
+      <ContactListWrap>
+        {visibleContacts.map(contact => (
+          <ContactItem key={contact.id} contact={contact} />
+        ))}
+      </ContactListWrap>
+    )
   );
 };

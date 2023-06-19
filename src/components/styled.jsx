@@ -3,8 +3,8 @@ import { MdDelete } from 'react-icons/md';
 
 export const Section = styled.div`
   text-align: center;
-
   color: rgb(140, 141, 180);
+
   padding-top: 20px;
   padding-bottom: 50px;
 `;
@@ -21,10 +21,10 @@ export const Form = styled.form`
 `;
 
 export const Label = styled.label`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   display: inline-block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 `;
 
 export const Input = styled.input`
@@ -37,13 +37,14 @@ export const Input = styled.input`
   border: none;
   outline: none;
   border-radius: 5px;
-  background-color: transparent;
-  box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px inset,
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: rgba(255, 255, 255, 0.1) -4px -2px 6px 0px inset,
     rgba(70, 70, 70, 0.12) 4px 2px 4px 0px inset;
   transition: all 250ms linear;
 
   &:focus {
-    box-shadow: rgba(255, 255, 255, 0.5) -8px -4px 12px 0px inset,
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: rgba(255, 255, 255, 0.2) -8px -4px 12px 0px inset,
       rgba(90, 90, 90, 0.3) 8px 4px 8px 0px inset;
   }
 `;
@@ -55,17 +56,18 @@ export const Button = styled.button`
   margin-left: auto;
   margin-right: auto;
 
-  width: 130px;
+  width: 150px;
   height: 36px;
 
+  font-family: inherit;
   font-size: 16px;
   color: rgb(140, 141, 180);
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.3);
 
   border-radius: 5px;
   border: none;
   padding: 8px 20px;
-  box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px,
+  box-shadow: rgba(255, 255, 255, 0.1) -4px -2px 6px 0px,
     rgba(70, 70, 70, 0.12) 4px 2px 4px 0px;
   transition: all 250ms linear;
 
@@ -75,12 +77,12 @@ export const Button = styled.button`
     outline: none;
 
     color: rgb(87, 88, 134);
-    box-shadow: rgba(255, 255, 255, 0.7) -4px -2px 6px 0px,
+    box-shadow: rgba(255, 255, 255, 0.2) -4px -2px 6px 0px,
       rgba(70, 70, 70, 0.3) 4px 2px 4px 0px;
   }
   &:disabled {
     cursor: default;
-    box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px,
+    box-shadow: rgba(255, 255, 255, 0.3) -4px -2px 6px 0px,
       rgba(70, 70, 70, 0.12) 4px 2px 4px 0px;
     transition: all 0ms linear;
   }
@@ -93,9 +95,9 @@ export const DeleteButton = styled.button`
   color: rgb(140, 141, 180);
   background-color: transparent;
   border-radius: 5px;
-  border: 4px solid transparent;
+  border: 3px solid transparent;
   padding: 4px;
-  box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px,
+  box-shadow: rgba(255, 255, 255, 0.3) -4px -2px 6px 0px,
     rgba(70, 70, 70, 0.12) 4px 2px 4px 0px,
     rgba(255, 255, 255, 0.5) -4px -2px 6px 0px inset,
     rgba(70, 70, 70, 0.12) 4px 2px 4px 0px inset;
@@ -107,7 +109,7 @@ export const DeleteButton = styled.button`
     outline: none;
 
     color: rgb(87, 88, 134);
-    box-shadow: rgba(255, 255, 255, 0.7) -4px -2px 6px 0px,
+    box-shadow: rgba(255, 255, 255, 0.3) -4px -2px 6px 0px,
       rgba(70, 70, 70, 0.3) 4px 2px 4px 0px,
       rgba(255, 255, 255, 0.7) -4px -2px 6px 0px inset,
       rgba(70, 70, 70, 0.3) 4px 2px 4px 0px inset;
@@ -115,7 +117,7 @@ export const DeleteButton = styled.button`
 
   &:disabled {
     cursor: default;
-    box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px,
+    box-shadow: rgba(255, 255, 255, 0.3) -4px -2px 6px 0px,
       rgba(70, 70, 70, 0.12) 4px 2px 4px 0px,
       rgba(255, 255, 255, 0.5) -4px -2px 6px 0px inset,
       rgba(70, 70, 70, 0.12) 4px 2px 4px 0px inset;
@@ -134,12 +136,6 @@ export const ContactTitle = styled.h2`
   margin-bottom: 10px;
 `;
 
-export const ContactFeature = styled.h3`
-  font-size: 16px;
-  font-weight: 400;
-  margin-bottom: 10px;
-`;
-
 export const ContactListWrap = styled.ul`
   border-radius: 10px;
   min-width: 240px;
@@ -150,7 +146,8 @@ export const ContactListWrap = styled.ul`
   margin-right: auto;
   flex-direction: column-reverse;
   overflow: hidden;
-  box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px,
+  border: 4px solid rgba(255, 255, 255, 0.4);
+  box-shadow: rgba(255, 255, 255, 0.2) -4px -2px 6px 0px,
     rgba(70, 70, 70, 0.12) 4px 2px 4px 0px;
 `;
 
@@ -159,12 +156,16 @@ export const ContactItemWrap = styled.li`
   align-items: center;
   gap: 10px;
   padding: 10px 10px;
-  box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px inset,
-    rgba(70, 70, 70, 0.12) 4px 2px 4px 0px inset;
 
   &:nth-child(even) {
-    background-color: #e4e9ee;
-    box-shadow: rgba(255, 255, 255, 0.5) -4px -2px 6px 0px,
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: rgba(255, 255, 255, 0.3) -4px -2px 6px 0px inset,
+      rgba(70, 70, 70, 0.12) 4px 2px 4px 0px inset;
+  }
+
+  &:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: rgba(255, 255, 255, 0.3) -4px -2px 6px 0px,
       rgba(70, 70, 70, 0.12) 4px 2px 4px 0px;
   }
 `;

@@ -3,7 +3,6 @@ import { Filter } from './Filter';
 import { ContactList } from './ContactList';
 import { Section, PhonebookTitle, ContactTitle } from './styled';
 import { Toaster } from 'react-hot-toast';
-
 export const App = () => {
   return (
     <>

@@ -3,8 +3,8 @@
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
-  background-color: #ecf3f5;
   color: #000000;
+  background: linear-gradient(to right, #ebf0f4, #8999aa);
   padding: 0;
   margin: 0;
 
