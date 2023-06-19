@@ -9,7 +9,7 @@ export const contactsApi = createApi({
   endpoints: builder => ({
     getContacts: builder.query({
       query: () => ({
-        url: 'contacts/',
+        url: 'contacts',
       }),
       providesTags: ['Contacts'],
     }),
@@ -20,7 +20,19 @@ export const contactsApi = createApi({
       }),
       invalidatesTags: ['Contacts'],
     }),
+    addContact: builder.mutation({
+      query: body => ({
+        url: 'contacts',
+        method: 'POST',
+        body,
+      }),
+      invalidatesTags: ['Contacts'],
+    }),
   }),
 });
 
-export const { useGetContactsQuery, useDeleteContactMutation } = contactsApi;
+export const {
+  useGetContactsQuery,
+  useDeleteContactMutation,
+  useAddContactMutation,
+} = contactsApi;

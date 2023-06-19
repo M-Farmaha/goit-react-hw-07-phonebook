@@ -44,6 +44,15 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 130px;
+  height: 36px;
+
   font-size: 16px;
   color: #ffffff;
   background-color: rgb(87, 88, 134);
@@ -61,6 +70,12 @@ export const Button = styled.button`
 
     box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 29px 0px;
   }
+  &:disabled {
+    background-color: #686b7d;
+    cursor: default;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: all 0ms linear;
+  }
 `;
 
 export const DeleteButton = styled.button`
@@ -68,7 +83,7 @@ export const DeleteButton = styled.button`
   justify-content: center;
   align-items: center;
   color: #ffffff;
-  background-color: #aeaeae;
+  background-color: #9295a9;
   border-radius: 5px;
   border: none;
   padding: 6px;
@@ -85,7 +100,7 @@ export const DeleteButton = styled.button`
   }
 
   &:disabled {
-    background-color: #ffed7a;
+    background-color: #c8cad4;
     cursor: default;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: all 0ms linear;
@@ -113,9 +128,9 @@ export const ContactListWrap = styled.ul`
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
-  width: 360px;
+  width: 340px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column-reverse;
   overflow: hidden;
 
   background-color: #ffffff;
@@ -123,7 +138,6 @@ export const ContactListWrap = styled.ul`
 `;
 
 export const ContactItemWrap = styled.li`
-  width: 100%;
   display: flex;
   align-items: center;
   gap: 10px;

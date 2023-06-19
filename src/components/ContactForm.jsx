@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Form, Label, Input, Button } from './styled';
+import { useAddContactMutation } from 'redux/contactsApi';
+import { toast } from 'react-hot-toast';
+import { ButtonAddLoader } from './Loaders';
 
 export const ContactForm = () => {
   const [name, setName] = useState(
@@ -9,6 +12,9 @@ export const ContactForm = () => {
     JSON.parse(window.localStorage.getItem('NUMBER')) ?? ''
   );
 
+  const [addContact, { isLoading, isSuccess, isError, error }] =
+    useAddContactMutation();
+
   useEffect(() => {
     window.localStorage.setItem('NAME', JSON.stringify(name));
   }, [name]);
@@ -17,8 +23,14 @@ export const ContactForm = () => {
     window.localStorage.setItem('NUMBER', JSON.stringify(number));
   }, [number]);
 
+  useEffect(() => {
+    isSuccess && toast.success('Successfully added!');
+    isError && toast.error(`Wasn't added!. Status: ${error.status}`);
+  }, [error, isError, isSuccess]);
+
   const handleSubmit = e => {
     e.preventDefault();
+    addContact({ name, number });
     setName('');
     setNumber('');
   };
@@ -47,7 +59,9 @@ export const ContactForm = () => {
         pattern="[0-9\s]{6,20}"
         required
       />
-      <Button type="submit">Add contact</Button>
+      <Button type="submit" disabled={isLoading}>
+        {!isLoading ? 'Add contact' : <ButtonAddLoader />}
+      </Button>
     </Form>
   );
 };
