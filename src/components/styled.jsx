@@ -75,8 +75,8 @@ export const Button = styled.button`
     outline: none;
 
     color: rgb(87, 88, 134);
-    box-shadow: rgba(255, 255, 255, 0.5) -8px -4px 12px 0px,
-      rgba(90, 90, 90, 0.3) 8px 4px 8px 0px;
+    box-shadow: rgba(255, 255, 255, 0.7) -4px -2px 6px 0px,
+      rgba(70, 70, 70, 0.3) 4px 2px 4px 0px;
   }
   &:disabled {
     cursor: default;
