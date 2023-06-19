@@ -1,6 +1,3 @@
-import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/slice';
-
 import PropTypes from 'prop-types';
 import {
   ContactItemWrap,
@@ -9,20 +6,23 @@ import {
   DeleteButton,
   DeleteIcon,
 } from './styled';
+import { useDeleteContactMutation } from 'redux/contactsApi';
+import { Loader } from './Loader';
 
 export const ContactItem = ({ contact }) => {
-  const dispatch = useDispatch();
+  const [deleteContact, { isLoading }] = useDeleteContactMutation();
 
   return (
     <ContactItemWrap>
       <ContactName>{contact.name}: </ContactName>
-      <ContactNumber>{contact.number}</ContactNumber>
+      <ContactNumber>{contact.phone}</ContactNumber>
       <DeleteButton
+        disabled={isLoading}
         type="button"
         id={contact.id}
-        onClick={() => dispatch(deleteContact(contact.id))}
+        onClick={() => deleteContact(contact.id)}
       >
-        <DeleteIcon />
+        {!isLoading ? <DeleteIcon /> : <Loader />}
       </DeleteButton>
     </ContactItemWrap>
   );
@@ -32,6 +32,6 @@ ContactItem.propTypes = {
   contact: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
   }),
 };

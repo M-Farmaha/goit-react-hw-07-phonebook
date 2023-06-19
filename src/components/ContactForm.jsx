@@ -1,14 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Form, Label, Input, Button } from './styled';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from 'redux/slice';
-import { getContacts } from 'redux/selectors';
-
 export const ContactForm = () => {
-  const contacts = useSelector(getContacts);
-  const dispatch = useDispatch();
-
   const [name, setName] = useState(
     JSON.parse(window.localStorage.getItem('NAME')) ?? ''
   );
@@ -26,13 +19,6 @@ export const ContactForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (contacts.find(contact => contact.name === name)) {
-      alert(`${name} is already in contacts `);
-      return;
-    }
-
-    dispatch(addContact({ name, number }));
-
     setName('');
     setNumber('');
   };

@@ -1,7 +1,7 @@
 import { ContactFeature, Input } from './styled';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { setFilter } from 'redux/slice';
+import { setFilter } from 'redux/filterSlice';
 import { getFilter } from 'redux/selectors';
 import { useEffect, useState } from 'react';
 
@@ -13,7 +13,7 @@ export const Filter = () => {
   useEffect(() => {
     const debounce = setTimeout(() => {
       dispatch(setFilter(inputValue));
-    }, 300);
+    }, 500);
 
     return () => {
       clearTimeout(debounce);

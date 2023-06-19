@@ -73,7 +73,7 @@ export const DeleteButton = styled.button`
   border: none;
   padding: 6px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transition: all 250ms linear;
+  transition: all 200ms linear;
 
   &:hover,
   &:focus {
@@ -83,11 +83,18 @@ export const DeleteButton = styled.button`
 
     box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 29px 0px;
   }
+
+  &:disabled {
+    background-color: #ffed7a;
+    cursor: default;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: all 0ms linear;
+  }
 `;
 
 export const DeleteIcon = styled(MdDelete)`
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 `;
 
 export const ContactTitle = styled.h2`
