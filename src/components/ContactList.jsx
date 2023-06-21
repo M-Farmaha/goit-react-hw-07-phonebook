@@ -20,7 +20,6 @@ export const ContactList = () => {
   const visibleContacts = data?.filter(contact =>
     contact.name.toLowerCase().includes(filter)
   );
-  console.log(visibleContacts);
 
   return isLoading ? (
     <ContactsLoader />

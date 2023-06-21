@@ -1,5 +1,26 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { MdDelete } from 'react-icons/md';
+
+export const changeBlur = keyframes`
+  0% {
+    backdrop-filter: blur(20px);
+  }
+
+  100% {
+    backdrop-filter: blur(0px);
+  }
+`;
+
+export const BlurDiv = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  animation-name: ${changeBlur};
+  animation-duration: 1000ms;
+`;
 
 export const Section = styled.div`
   text-align: center;
@@ -37,6 +58,7 @@ export const Input = styled.input`
   border: none;
   outline: none;
   border-radius: 5px;
+
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: rgba(255, 255, 255, 0.1) -4px -2px 6px 0px inset,
     rgba(70, 70, 70, 0.12) 4px 2px 4px 0px inset;
@@ -137,6 +159,7 @@ export const ContactTitle = styled.h2`
 `;
 
 export const ContactListWrap = styled.ul`
+  backdrop-filter: blur(8px);
   border-radius: 10px;
   min-width: 240px;
   width: calc(100vw - 40px);
