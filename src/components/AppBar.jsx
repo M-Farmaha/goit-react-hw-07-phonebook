@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { HandleRedirectContext } from './Layout';
 import {
   NavList,
   Header,
@@ -7,19 +9,35 @@ import {
 } from '../components/styled';
 
 export const AppBar = () => {
+  const handleRedirect = useContext(HandleRedirectContext);
+
+  const handleClick = (e, path) => {
+    e.preventDefault();
+    handleRedirect(path);
+  };
+
   return (
     <Header>
       <NavWrap>
         <PhonebookTitle>Phonebook</PhonebookTitle>
         <NavList>
           <li>
-            <NavLinkStyled to="/">Contacts</NavLinkStyled>
+            <NavLinkStyled onClick={e => handleClick(e, '/')} to="/">
+              Contacts
+            </NavLinkStyled>
           </li>
           <li>
-            <NavLinkStyled to="register">Sign Up</NavLinkStyled>
+            <NavLinkStyled
+              onClick={e => handleClick(e, '/register')}
+              to="/register"
+            >
+              Sign Up
+            </NavLinkStyled>
           </li>
           <li>
-            <NavLinkStyled to="login">Sign In</NavLinkStyled>
+            <NavLinkStyled onClick={e => handleClick(e, '/login')} to="/login">
+              Sign In
+            </NavLinkStyled>
           </li>
         </NavList>
       </NavWrap>

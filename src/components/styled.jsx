@@ -2,9 +2,9 @@ import styled, { keyframes } from 'styled-components';
 import { MdDelete } from 'react-icons/md';
 import { NavLink, Link } from 'react-router-dom';
 
-export const changeBlur = keyframes`
+export const Blur = keyframes`
   0% {
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
   }
 
   100% {
@@ -19,8 +19,8 @@ export const BlurDiv = styled.div`
   width: 100%;
   height: 100%;
   z-index: 999;
-  animation-name: ${changeBlur};
-  animation-duration: 500ms;
+  animation-name: ${Blur};
+  animation-duration: 330ms;
 `;
 
 export const Header = styled.header`
@@ -30,8 +30,6 @@ export const Header = styled.header`
   z-index: 9999;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
-
-  border-bottom: 3px solid transparent;
   box-shadow: rgba(251, 252, 255, 0.2) 0px 12px 15px 0px;
 `;
 
@@ -73,7 +71,6 @@ export const NavLinkStyled = styled(NavLink)`
 `;
 
 export const LinkStyled = styled(Link)`
-  display: block;
   font-size: 16px;
   color: rgb(140, 141, 180);
 
