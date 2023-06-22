@@ -123,8 +123,8 @@ export const Input = styled.input`
 
   &:focus {
     background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: rgba(255, 255, 255, 0.2) -8px -4px 12px 0px inset,
-      rgba(90, 90, 90, 0.3) 8px 4px 8px 0px inset;
+    box-shadow: rgba(255, 255, 255, 0.2) -4px -2px 6px 0px inset,
+      rgba(70, 70, 70, 0.3) 4px 2px 4px 0px inset;
   }
 `;
 
