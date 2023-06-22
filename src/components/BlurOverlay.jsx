@@ -7,7 +7,7 @@ export const BlurOverlay = () => {
   useEffect(() => {
     setTimeout(() => {
       setisLoaded(true);
-    }, 1000);
+    }, 500);
   }, []);
 
   return !isLoaded && <BlurDiv />;

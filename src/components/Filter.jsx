@@ -1,4 +1,4 @@
-import { Input, Label } from './styled';
+import { Form, Input, Label } from './styled';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
@@ -23,7 +23,7 @@ export const Filter = () => {
   }, [dispatch, inputValue]);
 
   return (
-    <>
+    <Form style={{ marginBottom: '20px' }}>
       <Label
         htmlFor={'filterInput'}
         style={{
@@ -35,6 +35,7 @@ export const Filter = () => {
         Find contacts by name
       </Label>
       <Input
+        autoComplete="off"
         type="text"
         id={'filterInput'}
         value={inputValue}
@@ -42,6 +43,6 @@ export const Filter = () => {
         onFocus={() => setIsFilterFocused(true)}
         onBlur={() => setIsFilterFocused(false)}
       />
-    </>
+    </Form>
   );
 };

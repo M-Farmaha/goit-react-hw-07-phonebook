@@ -39,7 +39,11 @@ export const ContactForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} autoComplete="off">
+    <Form
+      style={{ marginTop: '30px' }}
+      onSubmit={handleSubmit}
+      autoComplete="off"
+    >
       <Label
         htmlFor={'name'}
         style={{ color: isNameFocused && 'rgb(87, 88, 134)' }}
@@ -47,6 +51,7 @@ export const ContactForm = () => {
         Name
       </Label>
       <Input
+        style={{ marginBottom: '20px' }}
         type="text"
         name="name"
         value={name}
@@ -65,6 +70,7 @@ export const ContactForm = () => {
         Number
       </Label>
       <Input
+        style={{ marginBottom: '20px' }}
         type="tel"
         name="number"
         value={number}
@@ -76,7 +82,11 @@ export const ContactForm = () => {
         pattern="[0-9\s]{6,20}"
         required
       />
-      <Button type="submit" disabled={isLoading}>
+      <Button
+        style={{ marginBottom: '40px' }}
+        type="submit"
+        disabled={isLoading || !name || !number}
+      >
         {!isLoading ? 'Add contact' : <ButtonAddLoader />}
       </Button>
     </Form>

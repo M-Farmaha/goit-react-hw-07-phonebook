@@ -1,24 +1,24 @@
-import { Toaster } from 'react-hot-toast';
+import { lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-import { ContactForm } from './ContactForm';
-import { Filter } from './Filter';
-import { ContactList } from './ContactList';
-import { BlurOverlay } from './BlurOverlay';
+import { Layout } from './Layout';
+import { ErrorPage } from 'pages/ErrorPage';
 
-import { Section, PhonebookTitle, ContactTitle } from './styled';
+const ContactsPage = lazy(() => import('../pages/ContactsPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage'));
+const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 
 export const App = () => {
   return (
     <>
-      <Toaster />
-      <BlurOverlay />
-      <Section>
-        <PhonebookTitle>Phonebook</PhonebookTitle>
-        <ContactForm />
-        <ContactTitle>Contacts</ContactTitle>
-        <Filter />
-        <ContactList />
-      </Section>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<ContactsPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+        </Route>
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
     </>
   );
 };
